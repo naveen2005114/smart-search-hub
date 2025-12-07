@@ -1,170 +1,171 @@
-🧠 Smart Search Hub
-An intelligent website recommendation system powered by semantic search & AI embeddings.
-🚀 About the Project
+# 🔍 Smart Search Hub
 
-Smart Search Hub is an AI-powered search assistant that recommends the most relevant websites based on user queries.
-Instead of traditional keyword matching, it uses Sentence Transformer embeddings + Cosine Similarity to understand meaning and context.
+Smart Search Hub is a powerful web-based intelligent search system that allows users to browse **movies, music, books, news, and more** from a single unified platform.  
+It uses a Python Flask backend and a responsive HTML/CSS/JS frontend to deliver fast and accurate results.
 
-Whether a user searches for music, movies, makeup, electronics, games, sports, shopping, education, or anything else — Smart Search Hub returns accurate, intelligent, multi-site recommendations.
+---
 
-✨ Features
-🔍 AI-Driven Semantic Search
+## 🌟 Features
 
-Understands meaning, not just keywords
+- 🔎 **Universal Smart Search** – Search movies, music, books, or any topic.
+- ⚡ **Fast Real-Time Results** – Optimized backend API for quick responses.
+- 🎵 **Category-Based Suggestions** – Movies, songs, books & more.
+- 🌐 **Flask REST API** – Simple and fast Python backend.
+- 📱 **Responsive Frontend** – Built with HTML, CSS, and JavaScript.
+- 📂 **Expandable Database** – Easily add more items in `database.json`.
+- 🔁 **Live Server + Ngrok / LocalTunnel Support** – Public access to your project.
 
-Uses all-MiniLM-L6-v2 model for embeddings
+---
 
-Ranks websites using cosine similarity
+## 📂 Project Structure
 
-🌐 Multi-Category Recommendations
-
-Supports categories like:
-
-🎵 Music
-
-🎬 Movies
-
-🎮 Games
-
-🍔 Food
-
-🎓 Education
-
-📱 Electronics
-
-🛒 Shopping
-
-💄 Makeup
-
-⚽ Sports
-
-And many more…
-
-⚡ Fast & Accurate Suggestions
-
-Returns top 5 sites per search
-
-Uses precomputed embeddings for speed
-
-Gives multi-site output for each keyword
-
-🖥️ Beautiful UI
-
-Multi-colored UI
-
-Crystal buttons
-
-3D animated components
-
-Modern, responsive search interface
-
-🧩 Modular Code
-
-Fully separated:
-
-backend/
-
-frontend/
-
-database.json
-
-compute_embeddings.py
-
-📂 Project Structure
+```
 smart-search-hub/
-│── backend/
+│
+├── backend/
 │   ├── app.py
-│   ├── embeddings.npy
 │   ├── database.json
-│── frontend/
+│   ├── requirements.txt
+│
+├── frontend/
 │   ├── index.html
 │   ├── style.css
 │   ├── script.js
-│── compute_embeddings.py
-│── README.md
-│── venv/ (ignored)
+│
+├── README.md
+└── venv/
+```
 
-🛠️ Tech Stack
-Backend
+---
 
-Python
+## 🚀 How It Works
 
-Flask
+### **Frontend:**
+- User enters a search keyword (movie, music, book, etc.).
+- JavaScript sends the query to the Flask backend using `fetch()`.
 
-Flask-CORS
+### **Backend (Flask):**
+- Reads data from `database.json`.
+- Matches the search term.
+- Returns results as JSON.
 
-Sentence Transformers
+### **Output:**
+- Results appear instantly on the webpage.
 
-NumPy
+---
 
-Scikit-Learn
+## 🛠️ Installation Guide
 
-Frontend
-
-HTML5
-
-CSS3 (3D animated UI + modern styling)
-
-JavaScript (Fetch API)
-
-AI Model
-
-all-MiniLM-L6-v2 (Sentence Transformer)
-
-🔧 Installation & Setup
-1️⃣ Clone the repository
+### **1. Clone the Repository**
+```bash
 git clone https://github.com/naveen2005114/smart-search-hub.git
 cd smart-search-hub
+```
 
-2️⃣ Create a virtual environment
+---
+
+## 🔧 Backend Setup (Flask)
+
+### **2. Create a virtual environment**
+```bash
 python -m venv venv
+```
+
+### **3. Activate it**
+Windows:
+```bash
 venv\Scripts\activate
+```
 
-3️⃣ Install dependencies
-pip install -r requirements.txt
+### **4. Install required packages**
+```bash
+pip install -r backend/requirements.txt
+```
 
-4️⃣ Generate embeddings (run once)
-python compute_embeddings.py
-
-5️⃣ Start backend
+### **5. Run the backend**
+```bash
 python backend/app.py
+```
 
-6️⃣ Open frontend
+The backend runs at:
 
-Open frontend/index.html in your browser.
+```
+http://127.0.0.1:5000
+```
 
-🌍 Deploying Globally
+---
 
-You can expose your local backend using:
+## 🎨 Frontend Setup
 
-🟣 Ngrok
+Just open `frontend/index.html` in your browser, OR use VS Code Live Server.
+
+---
+
+## 🌐 Make Your Website Public
+
+You can expose your local server using:
+
+### **Ngrok**
+```bash
 ngrok http 5000
+```
 
-🔵 LocalTunnel
+### **LocalTunnel**
+```bash
 lt --port 5000
+```
 
-📌 Future Upgrades
+---
 
-🔊 Voice-based search
+## 📦 Update the Database
 
-🌎 Multi-language search
+All search items are stored here:
 
-🔥 Auto-learning recommendations
+```
+backend/database.json
+```
 
-👤 User profiles
+To add more:
 
-📊 Analytics dashboard
+```json
+{
+  "type": "movie",
+  "title": "Avengers Endgame",
+  "year": 2019,
+  "description": "Marvel superhero movie."
+}
+```
 
-📱 Mobile app version
+Save the file → restart backend → new results will appear.
 
-🧑‍💻 Developer
+---
 
-Naveen M
-India
-AI Enthusiast | Web Developer | Student
+## 🧪 Example Search Queries
 
-GitHub: https://github.com/naveen2005114
+| Search Keyword | What Happens |
+|----------------|--------------|
+| "music" | Shows music list |
+| "movie" | Displays movie database |
+| "Harry Potter" | Finds matching movies/books |
+| "romantic songs" | Shows romantic playlist |
+| "technology news" | Searches news database |
 
-⭐ Support
+---
 
-If you like this project, please ⭐ star the repository — it helps a lot!
+## 🧑‍💻 Author
+
+**Naveen (Hari Saravanan)**  
+GitHub: https://github.com/naveen2005114  
+
+---
+
+## ⭐ Support
+
+If you like this project, please ⭐ star the repository on GitHub!
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License.
+
